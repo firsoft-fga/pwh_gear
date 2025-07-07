@@ -24,7 +24,7 @@ procedurename - *abl procedure* (input oreq,output oresp,output ista)
 
 For classes *procedurename* must be in format :  *a.b.c.d*  where 
 - a.b.c - **ABL Class name**
-- d - **method name** with same signature
+- d - **method name** with same signature , if d='constructor' then call constructor with same params
 
   
   
