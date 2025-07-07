@@ -32,8 +32,12 @@ end.
 else do:
   cmethod = entry(num-entries(cprog,'.'),cprog,'.').  
   cprog = replace(cprog,'.' + cmethod,'').
-  oo = dynamic-new cprog ().
-  dynamic-invoke(oo,cmethod,input oreq,output oresp,output ista).
+  if cmethod = 'constructor' then 
+     oo = dynamic-new cprog (input oreq,output oresp,output ista).
+  else do:   
+    oo = dynamic-new cprog ().
+    dynamic-invoke(oo,cmethod,input oreq,output oresp,output ista).
+  end.  
   return.  
 end.    
     
